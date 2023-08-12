@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US" class="no-js">
+
+
+<!-- Mirrored from demo.themecon.net/onlyme/html/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 10:06:59 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Blog Details</title>
+
+    <!--favicon icon-->
+    <link rel="icon" href="{% static 'assets/images/favicon.png' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;display=swap" rel="stylesheet">
+
+    <!-- slick css -->
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+
+    <!-- global style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/global-style.css' %}">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!--responsive css-->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+    <style>
+    .blog-single .comment-list .reply-button {
+    background-color: #18191d;
+    color: #f43534;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.blog-single .comment-list .reply-button:hover {
+    background-color: #18191d;
+    font-size: 21px
+}
+
+    </style>
+</head>
+
+<body class="single">
+<!-- =======================================
+    ==Start Header section==
+=======================================-->
+<header class="header">
+    <a href="{% url 'home_page' %}" class="logo"><img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
+    <div class="humbarger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="menu-wrapper">
+    <ul class="main-menu">
+        <li><a href="{% url 'home_page' %}" data-text="About">About</a></li>
+        <li><a href="{% url 'home_page' %}#portfolio" data-text="Portfolio">Portfolio</a></li>
+        <li><a href="{% url 'home_page' %}#skill" data-text="Skill">Skill</a></li>
+        <li><a href="{% url 'blogs:blogs' %}" data-text="Blogs">Blogs</a></li>
+        <li><a href="{% url 'home_page' %}#contact" data-text="Contact">Contact</a></li>
+    </ul>
+
+    <div class="quick-link">
+        <div class="email">
+            <span>Want to talk?</span>
+            <a href="https://demo.themecon.net/cdn-cgi/l/email-protection#5920362c2b743c34383035193e34383035773a3634"><span
+                    class="__cf_email__" data-cfemail="abd2c4ded986cec6cac2c7ebccc6cac2c785c8c4c6">[email&#160;protected]</span></a>
+        </div>
+        <div class="follow-me">
+            <span>Follow me :</span>
+            <ul class="social-icon">
+                <li class="facebook">
+                    <a href="#" title="Facebook" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                             class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="twitter">
+                    <a href="#" title="Twitter" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                             class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="linkedin">
+                    <a href="#" title="Linkedin" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                             class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="instagram">
+                    <a href="#" title="Instagram" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                             class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <img src="{% static 'assets/images/horizontal-logo.png' %}" alt="image" class="horizontal-img">
+</div>
+<!-- =======================================
+    ==End Header section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Hero section==
+=======================================-->
+<span class="vertical-line line1"></span>
+<span class="vertical-line line2"></span>
+<span class="vertical-line line3"></span>
+<span class="vertical-line line4"></span>
+<span class="vertical-line line5"></span>
+<!-- =======================================
+    ==End Hero section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Blog section==
+=======================================-->
+<section class="blog-single">
+    <div class="blog-single-banner" style="background: url('{{ blog.image.url }}') no-repeat center center/cover;">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <h1>{{ blog.title }}</h1>
+            <p>by: <span class="author"><a href="{% url 'home_page' %}#about">{{ blog.author.first_name }} {{ blog.author.last_name }}</a> / </span><span
+                    class="date"><a href="#"> {{ blog.date_created.day }} {{ blog.date_created|date:"F" }} {{ blog.date_created.year }}</a></span>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <article class="single-content">
+            {{ blog.content|safe }}
+
+
+            <!--                <blockquote>-->
+            <!--                    <h3>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised</h3>-->
+            <!--                    <span class="author"><span class="line"></span>joe washington</span>-->
+            <!--                </blockquote>-->
+            <!--                <img src="{% static 'assets/images/portfolio13.jpg' %}" alt="image">-->
+
+            <!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus delectus sequi, aperiam ab molestiae animi veniam, consequuntur molestias suscipit doloribus reprehenderit ut laudantium fuga unde facilis odio recusandae ullam nesciunt! suscipit doloribus reprehenderit ut laudantium fuga unde facilis odio recusandae ullam nesciunt!</p>-->
+        </article>
+
+        <div class="single-post-pagination">
+            {% if previous_blog %}
+            <a href="{% url 'blogs:blog_detail' previous_blog.id %}" class="prev" {% if not next_blog %}
+               style="width:200%" {% endif %}>
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-left"
+                     class="svg-inline--fa fa-long-arrow-alt-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                          d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"></path>
+                </svg>
+                {{ previous_blog.title }}
+            </a>
+            {% endif %}
+            {% if next_blog %}
+            <a href="{% url 'blogs:blog_detail' next_blog.id %}" class="next" {% if not previous_blog %}
+               style="width:200%" {% endif %}>
+                {{ next_blog.title }}
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right"
+                     class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
+                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"></path>
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+
+        <div id="comments" class="comments-area">
+            <h3 class="comment-title">{{ comments|length }} comments </h3>
+
+            <ul class="comment-list">
+                {% for comment in comments %}
+
+                <li class="comment">
+                    <div class="comment-author vcard">
+                        <img alt="" src="{% static 'assets/images/comment-avater.jpg' %}">
+                    </div>
+                    <div class="comment-metadata">
+                        <b class="fn">{{ comment.name }}</b>
+                        <a href="#" class="date-time"> <span class="comment-timestamp"> {{ comment.data_created | date:"Y-m-d\TH:i:s" }} </span>
+                        </a>
+                        <div class="comment-content">{{ comment.text }}</div>
+
+                        <button class="reply-button" data-comment-id="{{ comment.id }}">Reply</button>
+                        <div class="reply-form" data-comment-id="{{ comment.id }}" style="display: none;">
+                            <form action="{% url 'blogs:blog_detail' blog_id %}" class="comment-reply-form"
+                                  method="post" style="display: flex; flex-flow: row wrap;">
+                                {% csrf_token %}
+                                <input type="hidden" name="parent_comment_id" value="{{ comment.id }}">
+                                <p class="comment-form-author" style="width: 50%; padding-right: 15px;">
+                                    {{ form.name }}</p>
+                                <p class="comment-form-email" style="width: 50%; padding-right: 15px;">
+                                    {{ form.email }}</p>
+                                <p class="comment-form-comment" style="width: 100%;">{{ form.text }}</p>
+                                <p class="form-submit">
+                                    <input name="submit" type="submit" id="submit" class="btn-default"
+                                           value="Post a Comment">
+                                </p>
+                            </form>
+                        </div>
+
+                        {% if user.is_superuser %}
+                        <a href="{% url 'blogs:comment_delete' comment.id %}" class="delete">delete</a>
+                        {% endif %}
+                    </div>
+
+                    <ul class="comment-list children">
+
+
+                        {% for childs in comment.child_comments.all %}
+                        <li class="comment">
+                            <div class="comment-author vcard">
+                                <img alt="" src="{% static 'assets/images/comment-avater.jpg' %}">
+                            </div>
+                            <div class="comment-metadata">
+                                <b class="fn">{{ childs.name }}</b>
+                                <a href="#" class="date-time"> <span class="comment-timestamp"> {{ childs.data_created|date:"Y-m-d\TH:i:s" }} </span>
+                                </a>
+                                <div class="comment-content">{{ childs.text }}</div>
+
+                                {% if user.is_superuser %}
+                                <a href="{% url 'blogs:comment_delete' childs.id %}" class="delete">Delete</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+
+
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="comment-respond">
+            <form action="{% url 'blogs:blog_detail' blog_id %}" class="comment-form" method="post">
+                {% csrf_token %}
+                <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label>
+                    {{ form.name }}</p>
+                <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label>
+                    {{ form.email }}</p>
+                <p class="comment-form-comment"><label for="comment">Comment</label>{{ form.text }}</p>
+                <p class="form-submit">
+                    <input name="submit" type="submit" id="submit" class="btn-default" value="Post a Comment">
+                </p>
+
+            </form>
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Blog section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Contact section==
+=======================================-->
+<section class="footer-area">
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright-text">
+                    <p>&copy; <span class="update-year"></span> Developed By <a
+                            href="https://themeforest.net/user/theme_builder" target="_blank">Theme Builder.</a> All
+                        Right Reserved </p>
+                </div>
+
+                <ul class="social-icon">
+                    <li class="facebook">
+                        <a href="#" title="Facebook" target="_blank">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                                 class="svg-inline--fa fa-facebook-f fa-w-10" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="#" title="Twitter" target="_blank">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                                 class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 512 512">
+                                <path fill="currentColor"
+                                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="linkedin">
+                        <a href="#" title="Linkedin" target="_blank">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                                 class="svg-inline--fa fa-linkedin-in fa-w-14" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor"
+                                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="#" title="Instagram" target="_blank">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                                 class="svg-inline--fa fa-instagram fa-w-14" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="currentColor"
+                                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</section>
+<!-- =======================================
+    ==End Contact section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start scroll top==
+=======================================-->
+<div class="scroll-top not-visible">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up"
+         class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor"
+              d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path>
+    </svg>
+</div>
+<!-- =======================================
+    ==End scroll top==
+=======================================-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-10-year-range.min.js"></script>
+
+
+<!-- jQuary library -->
+<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.enllax.min.js' %}'"></script>
+
+<!-- waypoint js -->
+<script src="{% static 'assets/js/waypoint.js' %}"></script>
+
+<!-- slick js -->
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+
+<!-- all jQuary activation code here and always it will be bottom of all script tag -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script>
+         document.addEventListener("DOMContentLoaded", function () {
+      // Получаем все кнопки с классом "reply-button"
+      var replyButtons = document.querySelectorAll(".reply-button");
+
+      // Перебираем все кнопки и добавляем обработчик события клика
+      replyButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          // Получаем data-comment-id атрибут для конкретной кнопки
+          var commentId = button.getAttribute("data-comment-id");
+
+          // Получаем отсек для ответа на комментарий с соответствующим data-comment-id атрибутом
+          var replyForm = document.querySelector('.reply-form[data-comment-id="' + commentId + '"]');
+
+          // Проверяем текущее состояние отсека и изменяем его, чтобы показать или скрыть его
+          if (replyForm.style.display === "none") {
+            replyForm.style.display = "block"; // Показываем отсек, если он был скрыт
+          } else {
+            replyForm.style.display = "none"; // Скрываем отсек, если он был видим
+          }
+        });
+      });
+    });
+
+</script>
+<script>
+// Function to get user's timezone based on their IP address
+async function getUserTimezone() {
+  try {
+    const response = await fetch("https://ipinfo.io?token=c44b640f6c86fa");
+    const data = await response.json();
+
+    return data.timezone; // Return the timezone value
+  } catch (error) {
+    console.error("Error fetching user timezone:", error);
+    return null; // Return null or a default timezone in case of an error
+  }
+}
+
+// Wait for the DOM content to load
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const userTimezone = await getUserTimezone();
+
+    if (!userTimezone) {
+      console.log("Fallback to a default timezone or display an error message.");
+      return;
+    }
+
+    const commentTimestamps = document.querySelectorAll(".comment-timestamp");
+    commentTimestamps.forEach(function (timestampElement) {
+      const utcTime = new Date(timestampElement.innerText);
+      const utcMoment = moment.utc(utcTime);
+
+      const gmtOffset = -utcTime.getTimezoneOffset();
+
+      utcMoment.add(gmtOffset, 'minutes');
+
+      const localTime = utcMoment.tz(userTimezone).format("YYYY-MM-DD HH:mm:ss");
+      timestampElement.innerText = localTime;
+    });
+  } catch (error) {
+    console.error("Error:", error);
+  }
+});
+
+
+</script>
+
+</body>
+
+
+<!-- Mirrored from demo.themecon.net/onlyme/html/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 10:07:03 GMT -->
+</html>

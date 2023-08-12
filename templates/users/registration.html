@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<!-- Mirrored from storage.googleapis.com/theme-vessel-items/checking-sites/oddo-2-html/HTML/main/register-26.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Aug 2023 07:01:57 GMT -->
+<head>
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon" >
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@70;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/register_style.css' %}">
+
+</head>
+<body id="top">
+<div class="page_loader"></div>
+
+<!-- Login 26 start -->
+<div class="shadow-effect">
+    <div class="login-26" style="background: url({% static 'assets/images/register_back.jpg' %}) top left repeat;">
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="form-section">
+                    <div class="logo-2">
+                        <a href="login-26.html">
+                            <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="main-title">
+                        <h3 class="headline">
+                            <span>Create</span>
+                            <span class="words-wrapper">
+                                <b class="visible">An Account</b>
+                                <b class="blue">An Account</b>
+                            </span>
+                        </h3>
+                    </div>
+                    <form action="{% url 'users:registration' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group clearfix">
+<!--                            <input name="name" type="text" class="form-control" placeholder="Full Name" aria-label="Full Name">-->
+                            <label for="username" style="color: #00cfc8;margin-right: 270px;">Enter your username<span class="required">*</span></label>
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group clearfix">
+<!--                            <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address">-->
+                            <label for="username" style="color: #00cfc8;margin-right: 270px;">Enter your email<span class="required">*</span></label>
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group clearfix">
+<!--                            <input name="password" type="password" class="form-control" autocomplete="off" placeholder="Password" aria-label="Password">-->
+                            <label for="username" style="color: #00cfc8;margin-right: 270px;">Enter your password<span class="required">*</span></label>
+                            {{ form.password1 }}
+                        </div>
+                        <div class="form-group clearfix">
+<!--                            <input name="password2" type="password" class="form-control" autocomplete="off" placeholder="Password" aria-label="Password">-->
+                            <label for="username" style="color: #00cfc8;margin-right: 270px;">Confirm your password<span class="required">*</span></label>
+                            {{ form.password2 }}
+                        </div>
+
+                        <div class="form-group mb-0 clearfix">
+                            <button type="submit" class="btn btn-lg btn-primary btn-theme">Register</button>
+                        </div>
+                        {% if form.errors %}
+                        <div class="messages">
+                            {{ form.errors }}
+                        </div>
+                        {% endif %}
+                        <div class="extra-login clearfix">
+                            <span>Or Login With</span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="social-list">
+                            <li><a href="#" class="facebook-color"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="#" class="twitter-color"><i class="fa fa-twitter twitter-i"></i><span>Twitter</span></a></li>
+                            <li><a href="#" class="google-color"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+                        </ul>
+                    </form>
+                    <p>Already a member? <a href="{% url 'users:login' %}" class="thembo"> Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <!-- Login 26 end -->
+
+<!-- External JS libraries -->
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/app.js' %}"></script>
+<!-- Custom JS Script -->
+
+</body>
+
+<!-- Mirrored from storage.googleapis.com/theme-vessel-items/checking-sites/oddo-2-html/HTML/main/register-26.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Aug 2023 07:02:08 GMT -->
+</html>

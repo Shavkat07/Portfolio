@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en-US" class="no-js">
+
+
+<!-- Mirrored from demo.themecon.net/onlyme/html/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 10:01:51 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Home-3</title>
+
+    <!--favicon icon-->
+    <link rel="icon" href="{% static 'assets/images/favicon.png' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;display=swap" rel="stylesheet">
+
+    <!-- slick css -->
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+
+    <!-- global style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/global-style.css' %}">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-3.css' %}">
+
+    <!--responsive css-->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive-3.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/social_links.css' %}">
+    <style>
+
+/*-----------portfolio section--------*/
+.portfolio-section{
+    padding: 120px 0 191px;
+    background: url("images/project-bg1.jpg") no-repeat fixed center bottom / cover;
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-section .overlay{
+    background: rgba(20, 21, 25, 0.85);
+}
+.portfolio-section .shape {
+    position: absolute;
+    bottom: 100px;
+    left: -120px;
+    opacity: 0.8;
+}
+.portfolio-section .section-title {
+    top: 30%;
+}
+.portfolio-section .portfolio-wrapper  {
+    z-index: 2;
+    position: relative;
+}
+.portfolio-section .single-portfolio{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+.portfolio-section .single-portfolio:nth-child(even) {
+    flex-flow: row-reverse;
+}
+.portfolio-section .single-portfolio:last-child{
+    margin-bottom: 0;
+}
+.portfolio-section .single-portfolio .img-area{
+    background: #1e1f23;
+    width: 60%;
+    padding: 90px;
+    position: relative;
+}
+.portfolio-section .single-portfolio .img-area img {
+    box-shadow: 0 0 27px 0px rgba(0, 0, 0, 0.7);
+}
+.portfolio-section .single-portfolio .img-area .item-count{
+    display: block;
+    position: absolute;
+    right: -73px;
+    top: 20px;
+    font-size: 130px;
+    line-height: 0.9;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #333;
+}
+.portfolio-section .single-portfolio .img-area img,
+.portfolio-section .single-portfolio .img-area .item-count{
+    transform: translateX(-70px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.2s ease;
+}
+.portfolio-section .single-portfolio .img-area .item-count{
+    transition-delay: 0.5s;
+}
+.portfolio-section .single-portfolio .img-area img.animated,
+.portfolio-section .single-portfolio .img-area .item-count.animated{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-section .single-portfolio:nth-child(even) .img-area .item-count{
+    left: -73px;
+    right: inherit;
+}
+.portfolio-section .single-portfolio .portfolio-content{
+    width: 40%;
+    padding-left: 70px;
+    margin-bottom: 30px;
+}
+.portfolio-section .single-portfolio:nth-child(even) .portfolio-content {
+    padding-left: 0;
+    padding-right: 70px;
+}
+.portfolio-section .single-portfolio .img-area:before{
+    content: url("{% static 'assets/images/dot-texture-horizontal.png' %}");
+    position: absolute;
+    bottom: -83px;
+    left: 0px;
+    z-index: -1;
+}
+.portfolio-section .single-portfolio:nth-child(even) .img-area:before {
+    right: 0px;
+    left: inherit;
+
+}
+
+.portfolio-section .portfolio-content .portfolio-type{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #f43534;
+    font-weight: 700;
+    font-family: 'Futura Md BT';
+    letter-spacing: 1px;
+}
+.portfolio-section .portfolio-content h2{
+    color: #fffefe;
+    font-family: 'Futura Md BT';
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+.portfolio-section .portfolio-content p{
+    color: #ababab;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.portfolio-section .portfolio-content .portfolio-type,
+.portfolio-section .portfolio-content h2,
+.portfolio-section .portfolio-content p,
+.portfolio-section .portfolio-content .link-default{
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.2s ease;
+}
+.portfolio-section .portfolio-content .portfolio-type.animated,
+.portfolio-section .portfolio-content h2.animated,
+.portfolio-section .portfolio-content p.animated,
+.portfolio-section .portfolio-content .link-default.animated{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+.portfolio-section .portfolio-content .portfolio-type.animated{
+    transition-delay: 0.5s;
+}
+.portfolio-section .portfolio-content h2.animated{
+    transition-delay: 0.7s;
+}
+.portfolio-section .portfolio-content p.animated{
+    transition-delay: 0.9s;
+}
+.portfolio-section .portfolio-content .link-default.animated{
+    transition-delay: 1s;
+}
+
+/*---------testimonial-section------------*/
+.testimonial-section{
+    position: relative;
+    overflow: hidden;
+    padding: 0px 0;
+    background: url('{% static 'assets/images/testimonial-bg.jpg' %}') no-repeat center center / cover;
+}
+.testimonial-section .overlay{
+    background: rgba(20, 21, 25, 0.9);
+}
+.testimonial-section .shape {
+    position: absolute;
+    right: 0;
+    top: 120px;
+}
+.testimonial-section .testimonial-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 16px;
+}
+.testimonial-section .single-testimonial {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.testimonial-section .single-testimonial .slick-slide {
+    position: relative;
+    padding-top: 140px;
+}
+.testimonial-section .single-testimonial img.quote {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -1;
+}
+.testimonial-section .single-testimonial h2 {
+    font-style: italic;
+    color: #fff;
+}
+.testimonial-section .single-testimonial .author a {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f43534;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    margin-top: 26px;
+}
+.testimonial-section .single-testimonial .author .desgination {
+    display: block;
+    font-size: 14px;
+    text-transform: none;
+    color: #f43534;
+}
+.testimonial-section .slick-dots{
+    margin-top: 10px;
+}
+.testimonial-section .slick-dots li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.testimonial-section .slick-dots li button {
+    border: none;
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #333;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    padding: 0;
+}
+.testimonial-section .slick-dots li.slick-active button {
+    background: #acacac;
+}
+
+/*----author image area-------*/
+.testimonial-section .author-img-wrapper {
+    margin: 20px 0 0 300px;
+    position: relative;
+    max-width: 210px;
+}
+
+.testimonial-section .author-img-wrapper:before{
+    content: url('{% static 'assets/images/curve.png' %}');
+    position: absolute;
+    bottom: 150px;
+    left: 126px;
+    overflow: hidden;
+    width: 0;
+    transition: all 1.5s ease 0.3s;
+}
+.testimonial-section .author-img-wrapper.animated:before{
+    width: 1100px;
+}
+.testimonial-section .author-img-wrapper .author-img {
+    border-radius: 100%;
+    height: 160px;
+    width: 160px;
+    border: 2px dashed #696a69;
+    padding: 10px;
+}
+.testimonial-section .author-img-wrapper:focus{
+    box-shadow: none;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+<!-- =======================================
+    ==Start Header section==
+=======================================-->
+<header class="header">
+    <a href="{% url 'home_page' %}" class="logo"><img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
+    <div class="humbarger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="menu-wrapper">
+    <ul class="main-menu">
+        <li><a href="{% url 'home_page' %}" data-text="About">About</a></li>
+        <li><a href="{% url 'home_page' %}#portfolio" data-text="Portfolio">Portfolio</a></li>
+        <li><a href="{% url 'home_page' %}#skill" data-text="Skill">Skill</a></li>
+        <li><a href="{% url 'home_page' %}#blog" data-text="Blogs">Blogs</a></li>
+        <li><a href="{% url 'home_page' %}#contact" data-text="Contact">Contact</a></li>
+    </ul>
+
+    <div class="quick-link">
+        <div class="email">
+            <span>Want to talk?</span>
+            <a href="mailto:shavkatkurbanov065@gmail.com" class="email animate-me">
+                <script type="text/javascript">
+                                /*<![CDATA[*/
+                                var email = "shavkatkurbanov065@gmail.com";
+                                document.write('<span>' + email + '</span>');
+                                /*]]>*/
+
+                </script>
+            </a>
+        </div>
+        <div class="follow-me">
+            <span>Follow me :</span>
+            <ul class="social-icon">
+                <!--                <li class="facebook">-->
+                <!--                    <a href="" title="Facebook" target="_blank">-->
+
+                <!--                    </a>-->
+                <!--                </li>-->
+                <li class="twitter">
+                    <a href="https://twitter.com/Shava_0_0_7" title="Twitter" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                             class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="linkedin">
+                    <a href="https://www.linkedin.com/in/shava007/" title="Linkedin" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                             class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="instagram">
+                    <a href="https://www.instagram.com/shava0_0_7/" title="Instagram" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                             class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <img src="{% static 'assets/images/horizontal-logo.png' %}" alt="image" class="horizontal-img">
+</div>
+<!-- =======================================
+    ==End Header section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Hero section==
+=======================================-->
+<span class="vertical-line line1"></span>
+<span class="vertical-line line2"></span>
+<span class="vertical-line line3"></span>
+<span class="vertical-line line4"></span>
+<span class="vertical-line line5"></span>
+
+<section class="hero-section pos-relative"
+         style="background: #16171b url('{% static 'assets/images/hero-bg.jpg' %}') no-repeat;">
+    <div class="overlay"></div>
+    <figure class="animate-bg-wrapper">
+        <img src="{% static 'assets/images/hero-bg-img1.jpg' %}" alt="image" class="bg-img1">
+
+        <img src="{% static 'assets/images/hero-bg-img2.jpg' %}" alt="image" class="bg-img2">
+
+        <img src="{% static 'assets/images/hero-bg-img3.jpg' %}" alt="image" class="bg-img3">
+
+        <img src="{% static 'assets/images/hero-bg-img4.jpg' %}" alt="image" class="bg-img4">
+    </figure>
+
+    <span class="vertical-logo"><img src="{% static 'assets/images/vertical-logo.png' %}" alt="vertical-logo"></span>
+    <div class="hero-image-wrapper">
+        <span class="hero-image animate-me"
+              style="background: url('{% static 'assets/images/hero-img-bg.jpg' %}') no-repeat center right/cover;"></span>
+        <img src="{% static 'assets/images/dot-texture.png' %}" alt="texture" class="dot-texture animate-me">
+    </div>
+    <span class="scroll-down animate-me" id="scroll-me">scroll down <img
+            src="{% static 'assets/images/scroll-down-arrow.png' %}" alt="arrow"></span>
+    <ul class="social-icon">
+        <li class="facebook">
+            <a href="https://t.me/shava_oo7" title="Telegram" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                     id="telegram-plane">
+                    <path fill="white"
+                          d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"></path>
+                </svg>
+                <!--                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"-->
+                <!--                     class="svg-inline&#45;&#45;fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"-->
+                <!--                     viewBox="0 0 320 512">-->
+                <!--                    <path fill="currentColor"-->
+                <!--                          d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>-->
+                <!--                </svg>-->
+            </a>
+        </li>
+        <li class="twitter">
+            <a href="https://twitter.com/Shava_0_0_7" title="Twitter" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                     class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                          d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                </svg>
+            </a>
+        </li>
+        <li class="linkedin">
+            <a href="https://www.linkedin.com/in/shava007/" title="Linkedin" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
+                     class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                          d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                </svg>
+            </a>
+        </li>
+        <li class="instagram">
+            <a href="https://www.instagram.com/shava0_0_7/" title="Instagram" target="_blank">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                     class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                </svg>
+            </a>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="hero-content">
+                <h1 class="animate-me"
+                    style="background: url('{% static 'assets/images/hero-title-pettern-bg.png' %}') no-repeat 95% center / contain;">
+                    I’m Shavkat</h1>
+                <h2 class="animate-me">Python Back-end Developer</h2>
+                <a href="#" class="hire-me link-default animate-me">Hire Me
+                    <span>
+                            <img src="{% static 'assets/images/arrow-right-white.png' %}" alt="arrow">
+                        </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Hero section==
+=======================================-->
+
+<!-- =======================================
+    ==Start about section==
+=======================================-->
+<section class="about-section pos-relative" id="about-me"
+         style="    background: url('{% static 'assets/images/about-bg.jpg' %}') no-repeat center top/ cover;">
+    <div class="overlay"></div>
+    <div class="about-shape">
+        <img src="{% static 'assets/images/about-shape.png' %}" alt="shape" class="shape">
+        <span class="circle1"></span>
+    </div>
+    <div class="container">
+        <img src="{% static 'assets/images/dot-texture.png' %}" alt="pattern img" class="dot-pattern">
+        <span class="about-img1 animate-me"
+              style="background: url('{% static 'assets/images/about-img1.jpg' %}') no-repeat top left/cover;"></span>
+        <div class="about-content">
+            <h2 class="animate-me">
+                Meet the team at my website building agency MRIT. I am currently working at MRIT as a Backend developer.
+            </h2>
+            <h5 class="animate-me">Experienced backend developer proficient in creating efficient and scalable web
+                solutions using Django and Django REST framework, as well as developing Telegram bots of moderate
+                complexity. Passionate about writing clean and maintainable code and continuously learning to enhance
+                skills and knowledge."</h5>
+        </div>
+        <span class="about-img2 animate-me"
+              style="background: url('{% static 'assets/images/about-img2.jpg' %}') no-repeat left top / cover;"></span>
+    </div>
+</section>
+<!-- =======================================
+    ==End about section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Portfolio section==
+=======================================-->
+<section class="portfolio-section" id="portfolio"
+         style="background: url('{% static 'assets/images/project-bg1.jpg' %}') no-repeat center center / cover;">
+    <h2 class="section-title" data-enllax-ratio="-0.5" data-enllax-type="foreground">porojects</h2>
+    <div class="overlay"></div>
+    <img src="{% static 'assets/images/portfolio-shape.png' %}" alt="shape" class="shape" data-enllax-ratio="0.5"
+         data-enllax-type="foreground">
+    <div class="container">
+        <div class="portfolio-wrapper">
+            {% for project in portfolio %}
+            <div class="single-portfolio">
+                <div class="img-area">
+                    <span class="item-count animate-me">01</span>
+                    <img src="{{ project.image.url }}" alt="portfolio img" class="animate-me">
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-type animate-me">{{ project.name }}</span>
+                    <h2 class="animate-me">{{ project.title }}</h2>
+                    <p class="animate-me">{{ project.description }}</p>
+                    <a href="{{ project.link }}" class="live-view link-default animate-me">View Live
+                        <span>
+                            <img src="{% static 'assets/images/arrow-right-white.png' %}" alt="arrow">
+                        </span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Portfolio section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Skill section==
+=======================================-->
+<section class="skill-section" id="skill">
+    <div class="container">
+        <h2 class="section-title" data-enllax-ratio="0.5" data-enllax-type="foreground"
+            data-enllax-direction="horizontal">My Skills</h2>
+
+        <div class="skill-wrapper" id="me-working-skill">
+            <span class="vertical-line"></span>
+            {% for skill in skills %}
+            <div class="single-skill animate-me">
+                <span class="circle"></span>
+                <span class="rectengle"></span>
+                <h3><span class="title">{{ skill.title }}</span> <span class="line"></span></h3>
+                <p>{{ skill.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Skill section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Service section==
+=======================================-->
+<section class="section service-section pos-relative"
+         style="background: url('{% static 'assets/images/service-bg.jpg' %}') no-repeat left center/cover;">
+    <h2 class="section-title" data-enllax-ratio="-0.7" data-enllax-type="foreground">Services</h2>
+    <div class="container">
+        <div class="service-wrapper" id="home2-service">
+            {% for service in services %}
+            <div class="single-service pos-relative">
+                <img src="{{ service.image.url }}" alt="service image"
+                     class="service-img animate-me">
+                <div class="service-text">
+                    <h2 class="animate-me">{{ service.name }}</h2>
+                    <p class="animate-me">{{ service.description }}</p>
+                </div>
+            </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Service section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Testimonial section==
+=======================================-->
+<section class="testimonial-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="testimonial-wrapper">
+            <div class="single-testimonial">
+                {% for testimonial in testimonials %}
+                <div>
+                    <img src="{% static 'assets/images/testimonial-quote.png' %}" alt="quote" class="quote">
+                    <h2>{{ testimonial.opinion }}</h2>
+                    <h5 class="author"><a href="#" target="_blank" title="View Author Info">{{ testimonial.full_name }}</a>
+                        <span class="designation">{{ testimonial.designation }}</span></h5>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="author-img-wrapper animate-me">
+                {% for client in clients_with_images %}
+                <div><img src="{{ client.image.url }}" class="author-img"
+                          alt="author img"></div>
+                {% endfor %}
+<!--                <div><img src="{% static 'assets/images/testimonial-author2.jpg' %}" class="author-img"-->
+<!--                          alt="author img"></div>-->
+<!--                <div><img src="{% static 'assets/images/testimonial-author3.jpg' %}" class="author-img"-->
+<!--                          alt="author img"></div>-->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Testimonial section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Blog section==
+=======================================-->
+<section class="blog-section" id="blog"
+         style="background: #141519 url('{% static 'assets/images/project-bg.jpg' %}') no-repeat center center/cover;">
+    <img src="{% static 'assets/images/blog-ellipse.png' %}" alt="" class="ellipse">
+    <div class="container">
+        <h2 class="section-title" data-enllax-ratio="0.5" data-enllax-type="foreground"
+            data-enllax-direction="horizontal">Articles</h2>
+        <div class="blog-wrapper">
+            <div class="single-blog title">
+                <h2 class="animate-me">My Articles</h2>
+                <a href="{% url 'blogs:blogs' %}" class="link-default view-more animate-me">More Article
+                    <span>
+                            <img src="{% static 'assets/images/arrow-right-white.png' %}" alt="arrow">
+                    </span>
+                </a>
+            </div>
+            {% for blog in object_list|slice:3 %}
+            <div class="single-blog animate-me">
+                <div>
+                    <a href="{% url 'blogs:blog_detail' blog.id %}" class="featured-img"><img src="{{ blog.image.url }}"
+                                                                                              alt="featured img"></a>
+                    <div class="post-title">
+                        <h3><a href="#">{{ blog.title }}</a></h3>
+                    </div>
+                </div>
+                <div class="like-comment">
+                    <a href="{% url 'blogs:blog_detail' blog.id %}" target="_blank" class="read-more">
+                        <img src="{% static 'assets/images/arrow-right-white.png' %}" alt="arrow">
+                    </a>
+                    <!--                    <span class="like">-->
+                    <!--                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart"-->
+                    <!--                                 class="svg-inline&#45;&#45;fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"-->
+                    <!--                                 viewBox="0 0 512 512"><path fill="currentColor"-->
+                    <!--                                                             d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg>-->
+                    <!--                            241-->
+                    <!--                        </span>-->
+                    <span class="comment">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-dots"
+                                 class="svg-inline--fa fa-comment-dots fa-w-16" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor"
+                                                                                                d="M144 208c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm112 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg>
+                            {{ blog.num_comments }}
+                        </span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Blog section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start Instagram section==
+=======================================-->
+<section class="instagram-section">
+    <img src="{% static 'assets/images/instagram-shape.png' %}" alt="shape" class="insta-shape">
+    <div class="container">
+        <div class="section-title">
+            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                 class="svg-inline--fa fa-instagram fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 448 512">
+                <path fill="currentColor"
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+            </svg>
+            <h2>Instagram</h2>
+        </div>
+        <div class="instagram-img-wrapper">
+            <div class="single-col sm">
+                <a href="#"><img src="{% static 'assets/images/instagram-img1.jpg' %}" alt="instagram img"></a>
+                <a href="#"><img src="{% static 'assets/images/instagram-img2.jpg' %}" alt="instagram img"></a>
+            </div>
+            <div class="single-col md">
+<!--                <a href="#"><img src="{% static 'assets/images/instagram-ismg3.jpg' %}" alt="instagram img"></a>-->
+                <a href="#"><img src="{% static 'assets/images/instagram-img4.jpg' %}" alt="instagram img"></a>
+            </div>
+            <div class="single-col lg">
+                <a href="#"><img src="{% static 'assets/images/instagram-img5.jpg' %}" alt="instagram img"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================================
+    ==End Instagram section==
+=======================================-->
+
+<!-- =======================================
+    ==Start Contact section==
+=======================================-->
+<section class="footer-area" id="contact"
+         style="background: #141519 url('{% static 'assets/images/service-bg.jpg' %}') no-repeat center center / cover;">
+    <div class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open-text"
+                     class="svg-inline--fa fa-envelope-open-text fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                          d="M176 216h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16zm-16 80c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16H176c-8.84 0-16 7.16-16 16v16zm96 121.13c-16.42 0-32.84-5.06-46.86-15.19L0 250.86V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V250.86L302.86 401.94c-14.02 10.12-30.44 15.19-46.86 15.19zm237.61-254.18c-8.85-6.94-17.24-13.47-29.61-22.81V96c0-26.51-21.49-48-48-48h-77.55c-3.04-2.2-5.87-4.26-9.04-6.56C312.6 29.17 279.2-.35 256 0c-23.2-.35-56.59 29.17-73.41 41.44-3.17 2.3-6 4.36-9.04 6.56H96c-26.51 0-48 21.49-48 48v44.14c-12.37 9.33-20.76 15.87-29.61 22.81A47.995 47.995 0 0 0 0 200.72v10.65l96 69.35V96h320v184.72l96-69.35v-10.65c0-14.74-6.78-28.67-18.39-37.77z"></path>
+                </svg>
+                <h2>get in touch</h2>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="address-area">
+                    <address>
+                        <span class="label address-label animate-me">address :</span>
+                        <p class="address animate-me">Uzbekistan, Samarkand city,<br> Sat-Tepo 13/28 </p>
+                        <span class="label email-label animate-me">E-mail :</span>
+                        <a href="mailto:shavkatkurbanov065@gmail.com" class="email animate-me">
+                            <script type="text/javascript">
+                                /*<![CDATA[*/
+                                var email = "shavkatkurbanov065@gmail.com";
+                                document.write('<span>' + email + '</span>');
+                                /*]]>*/
+
+                            </script>
+                        </a>
+                    </address>
+                    <div class="main">
+                        <a href="https://www.instagram.com/shava0_0_7/" target="_blank" class="card">
+
+                            <svg fill-rule="nonzero" height="30px" width="30px" viewBox="0,0,256,256"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                 class="instagram">
+                                <g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none"
+                                   font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10"
+                                   stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none"
+                                   fill-rule="nonzero">
+                                    <g transform="scale(8,8)">
+                                        <path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </a>
+                        <a href="https://twitter.com/Shava_0_0_7" target="_blank" class="card">
+                            <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                                 class="twitter">
+                                <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shava007/" target="_blank" class="card">
+                            <svg width="30px" height="30" viewBox="0 -2 44 44" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="dribble">>
+                                <g id="Icons" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                    <g id="Color-" transform="translate(-702.000000, -265.000000)">
+                                        <path d="M746,305 L736.2754,305 L736.2754,290.9384 C736.2754,287.257796 734.754233,284.74515 731.409219,284.74515 C728.850659,284.74515 727.427799,286.440738 726.765522,288.074854 C726.517168,288.661395 726.555974,289.478453 726.555974,290.295511 L726.555974,305 L716.921919,305 C716.921919,305 717.046096,280.091247 716.921919,277.827047 L726.555974,277.827047 L726.555974,282.091631 C727.125118,280.226996 730.203669,277.565794 735.116416,277.565794 C741.21143,277.565794 746,281.474355 746,289.890824 L746,305 L746,305 Z M707.17921,274.428187 L707.117121,274.428187 C704.0127,274.428187 702,272.350964 702,269.717936 C702,267.033681 704.072201,265 707.238711,265 C710.402634,265 712.348071,267.028559 712.41016,269.710252 C712.41016,272.34328 710.402634,274.428187 707.17921,274.428187 L707.17921,274.428187 L707.17921,274.428187 Z M703.109831,277.827047 L711.685795,277.827047 L711.685795,305 L703.109831,305 L703.109831,277.827047 L703.109831,277.827047 Z"
+                                              id="LinkedIn"></path>
+                                    </g>
+                                </g>
+                            </svg>
+
+                            <!--                            <svg height="30px" width="30px" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"-->
+                            <!--                                 class="dribble">-->
+                            <!--                                <path d="M20,38.5C9.799,38.5,1.5,30.201,1.5,20S9.799,1.5,20,1.5S38.5,9.799,38.5,20S30.201,38.5,20,38.5z"></path>-->
+                            <!--                                <path d="M20,2c9.925,0,18,8.075,18,18s-8.075,18-18,18S2,29.925,2,20S10.075,2,20,2 M20,1 C9.507,1,1,9.507,1,20s8.507,19,19,19s19-8.507,19-19S30.493,1,20,1L20,1z"-->
+                            <!--                                      fill="#ea4c89"></path>-->
+                            <!--                                <path d="M28.352 36.914c0 0-3.032-21.087-15.63-34.292M1.269 17.848c0 0 24.2 2.117 32.075-11.102M7.804 34.152c0 0 8.624-19.807 31.058-12.194"-->
+                            <!--                                      stroke-miterlimit="10" stroke="#ea4c89" fill="none"></path>-->
+                            <!--                            </svg>-->
+                        </a>
+                        <a href="https://vk.com/shava0_0_7" target="_blank" class="card">
+                            <svg class="codepen" style="enable-background:new 0 0 64 64;" height="30px" width="30px"
+                                 version="1.1" viewBox="0 0 64 64" xml:space="preserve"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="guidlines"/>
+                                <g id="FB"/>
+                                <g id="ig"/>
+                                <g id="yt"/>
+                                <g id="twitter"/>
+                                <g id="snapchat"/>
+                                <g id="WA"/>
+                                <g id="Pinterrest"/>
+                                <g id="Layer_9"/>
+                                <g id="Layer_10"/>
+                                <g id="Layer_11"><path class="st13" d="M4,13.9c2.1,0,5.3,0,7.1,0c0.9,0,1.6,0.6,1.9,1.4c0.9,2.6,2.9,8.3,5.2,12.2c3.1,5.1,5.1,7,6.4,6.8   c1.3-0.3,0.9-3.7,0.9-6.4s0.3-7.3-1-9.4l-2-2.9c-0.5-0.7,0-1.6,0.8-1.6h11.4c1.1,0,2,0.9,2,2v14.5c0,0,0.5,2.6,3.3-0.1   c2.8-2.7,5.8-7.7,8.3-12.8l1-2.4c0.3-0.7,1-1.2,1.8-1.2h7.4c1.4,0,2.4,1.4,1.9,2.7l-0.8,2.1c0,0-2.7,5.4-5.5,9.2   c-2.8,3.9-3.4,4.8-3,5.8c0.4,1,7.6,7.7,9.4,10.9c0.5,0.9,0.9,1.7,1.3,2.4c0.7,1.3-0.3,3-1.8,3l-8.4,0c-0.7,0-1.4-0.4-1.7-1   l-0.8-1.3c0,0-5.1-6-8.2-7.9c-3.2-1.8-3.1,0.8-3.1,0.8v5.3c0,2.2-1.8,4-4,4h-2c0,0-11,0-19.8-13.1C5.1,26.7,2.8,20.1,2,16.3   C1.8,15.1,2.7,13.9,4,13.9z"/></g>
+                                <g id="Layer_12"/>
+                                <g id="Layer_13"/>
+                                <g id="Layer_14"/>
+                                <g id="Layer_15"/>
+                                <g id="Layer_16"/>
+                                <g id="Layer_17"/></svg>
+                        </a>
+                        <a href="" target="_blank" class="card">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="23px" width="23px"
+                                 class="uiverse">
+                                <path fill="url(#paint0_linear_501_142)"
+                                      d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 3.8147e-06 49.2967 3.8147e-06 40.5456V4.82927C3.8147e-06 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z"></path>
+                                <path fill="url(#paint1_linear_501_142)"
+                                      d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z"></path>
+                                <path fill="url(#paint2_linear_501_142)"
+                                      d="M2.86102e-06 83.2195C2.86102e-06 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707L2.86102e-06 83.2195Z"></path>
+                                <defs>
+                                    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0"
+                                                    x1="0"
+                                                    id="paint0_linear_501_142">
+                                        <stop stop-color="#BF66FF"></stop>
+                                        <stop stop-color="#6248FF" offset="0.510417"></stop>
+                                        <stop stop-color="#00DDEB" offset="1"></stop>
+                                    </linearGradient>
+                                    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0"
+                                                    x1="0"
+                                                    id="paint1_linear_501_142">
+                                        <stop stop-color="#BF66FF"></stop>
+                                        <stop stop-color="#6248FF" offset="0.510417"></stop>
+                                        <stop stop-color="#00DDEB" offset="1"></stop>
+                                    </linearGradient>
+                                    <linearGradient gradientUnits="userSpaceOnUse" y2="87.6201" x2="96.1684" y1="0"
+                                                    x1="0"
+                                                    id="paint2_linear_501_142">
+                                        <stop stop-color="#BF66FF"></stop>
+                                        <stop stop-color="#6248FF" offset="0.510417"></stop>
+                                        <stop stop-color="#00DDEB" offset="1"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/jxpV5dvtFd" target="_blank" class="card">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px"
+                                 class="discord">
+                                <path d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Shavkat07" target="_blank" class="card">
+                            <svg height="30px" width="30px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"
+                                 class="github">
+                                <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/shava_oo7" target="_blank" class="card">
+                            <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                                 class="telegram">
+                                <path d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
+                                <path d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"
+                                      fill="#fff"></path>
+                                <path d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"
+                                      fill="#b0bec5"></path>
+                                <path d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"
+                                      fill="#cfd8dc"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/shava0_0_7/" target="_blank" class="card">
+                            <svg xml:space="preserve" viewBox="0 0 256 256" height="30" width="30" version="1.1"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                 class="reddit">
+                                    <defs>
+                                    </defs>
+                                <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+                                   style="stroke: none; border-radius:50%; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;">
+                                      <circle transform="matrix(1 0 0 1 0 0)"
+                                              style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;"
+                                              r="45" cy="45" cx="45"></circle>
+                                    <path stroke-linecap="round" transform="matrix(1 0 0 1 0 0)"
+                                          style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;"
+                                          d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 c 14.485 0 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 c 2.483 0 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"></path>
+                               </g>
+                            </svg>
+                        </a>
+                        <p class="text">MY<br>SOCIAL<br>LINKS</p>
+                        <div class="main_back"></div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form">
+                    <form method="post" action="{% url 'blogs:send_message' %}">
+                        {% csrf_token %}
+                        <div class="input-group name animate-me">
+                            <label for="name">name *</label>
+                            {{ form.name }}
+                        </div>
+
+                        <div class="input-group email animate-me">
+                            <label for="email">email *</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="input-group msg animate-me">
+                            <label for="message">message *</label>
+                            {{ form.message }}
+
+                        </div>
+
+                        <div class="input-group submit animate-me">
+                            <button type="submit">send here</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright-text">
+                    <p>&copy; <span class="update-year"></span> Developed By <a
+                            href="{% url 'home_page' %}">Shavkat Kurbanov.</a> All
+                        Right Reserved </p>
+                </div>
+
+                <!--                    <ul class="social-icon">-->
+                <!--                        <li class="facebook">-->
+                <!--                            <a href="#" title="Facebook" target="_blank">-->
+                <!--                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"-->
+                <!--                                     class="svg-inline&#45;&#45;fa fa-facebook-f fa-w-10" role="img"-->
+                <!--                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">-->
+                <!--                                    <path fill="currentColor"-->
+                <!--                                          d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>-->
+                <!--                                </svg>-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                        <li class="twitter">-->
+                <!--                            <a href="#" title="Twitter" target="_blank">-->
+                <!--                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"-->
+                <!--                                     class="svg-inline&#45;&#45;fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"-->
+                <!--                                     viewBox="0 0 512 512">-->
+                <!--                                    <path fill="currentColor"-->
+                <!--                                          d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>-->
+                <!--                                </svg>-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                        <li class="linkedin">-->
+                <!--                            <a href="#" title="Linkedin" target="_blank">-->
+                <!--                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"-->
+                <!--                                     class="svg-inline&#45;&#45;fa fa-linkedin-in fa-w-14" role="img"-->
+                <!--                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
+                <!--                                    <path fill="currentColor"-->
+                <!--                                          d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>-->
+                <!--                                </svg>-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                        <li class="instagram">-->
+                <!--                            <a href="#" title="Instagram" target="_blank">-->
+                <!--                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"-->
+                <!--                                     class="svg-inline&#45;&#45;fa fa-instagram fa-w-14" role="img"-->
+                <!--                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
+                <!--                                    <path fill="currentColor"-->
+                <!--                                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>-->
+                <!--                                </svg>-->
+                <!--                            </a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- =======================================
+    ==End Contact section==
+=======================================-->
+
+
+<!-- =======================================
+    ==Start scroll top==
+=======================================-->
+<div class="scroll-top not-visible">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up"
+         class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 320 512">
+        <path fill="currentColor"
+              d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path>
+    </svg>
+</div>
+
+
+<!-- =======================================
+    ==End scroll top==
+=======================================-->
+
+<!-- jQuary library -->
+<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+
+<!-- enllax parallux -->
+<script src="{% static 'assets/js/jquery.enllax.min.js' %}"></script>
+
+<!-- waypoint js -->
+<script src="{% static 'assets/js/waypoint.js' %}"></script>
+
+<!-- slick js -->
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+
+<!-- TweenMax js -->
+<script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+
+<!-- all jQuary activation code here and always it will be bottom of all script tag -->
+<script src="{% static 'assets/js/main-3.js' %}"></script>
+
+</body>
+
+
+<!-- Mirrored from demo.themecon.net/onlyme/html/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 10:02:02 GMT -->
+</html>
