@@ -1,13 +1,16 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Blogs(models.Model):
     author = models.ForeignKey('users.User', verbose_name="Автор", on_delete=models.CASCADE)
     title = models.CharField(verbose_name="Заголовок статьи", max_length=500)
+    slug = models.SlugField(max_length=255, unique=True, verbose_name="Ссылка на статью")
     content = models.TextField(verbose_name="Текст статьи")
-    likes = models.IntegerField(verbose_name="Лайки", default=0)
-    image = models.ImageField(upload_to="blogs_images", verbose_name="Главное изображение", blank=True, null=True)
+    # likes = models.IntegerField(verbose_name="Лайки", default=0)
+    image = models.ImageField(upload_to="blogs_images", verbose_name="Главное изображение",)
     date_created = models.DateTimeField(auto_now_add=True)
+    publish = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name = "Статья"

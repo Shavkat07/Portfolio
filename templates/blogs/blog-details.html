@@ -174,7 +174,7 @@
 
         <div class="single-post-pagination">
             {% if previous_blog %}
-            <a href="{% url 'blogs:blog_detail' previous_blog.id %}" class="prev" {% if not next_blog %}
+            <a href="{% url 'blogs:blog_detail' previous_blog.slug %}" class="prev" {% if not next_blog %}
                style="width:200%" {% endif %}>
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-left"
                      class="svg-inline--fa fa-long-arrow-alt-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@
             </a>
             {% endif %}
             {% if next_blog %}
-            <a href="{% url 'blogs:blog_detail' next_blog.id %}" class="next" {% if not previous_blog %}
+            <a href="{% url 'blogs:blog_detail' next_blog.slug %}" class="next" {% if not previous_blog %}
                style="width:200%" {% endif %}>
                 {{ next_blog.title }}
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right"
@@ -217,7 +217,7 @@
 
                         <button class="reply-button" data-comment-id="{{ comment.id }}">Reply</button>
                         <div class="reply-form" data-comment-id="{{ comment.id }}" style="display: none;">
-                            <form action="{% url 'blogs:blog_detail' blog_id %}" class="comment-reply-form"
+                            <form action="{% url 'blogs:blog_detail' blog_slug %}" class="comment-reply-form"
                                   method="post" style="display: flex; flex-flow: row wrap;">
                                 {% csrf_token %}
                                 <input type="hidden" name="parent_comment_id" value="{{ comment.id }}">
@@ -267,7 +267,7 @@
         </div>
 
         <div class="comment-respond">
-            <form action="{% url 'blogs:blog_detail' blog_id %}" class="comment-form" method="post">
+            <form action="{% url 'blogs:blog_detail' blog_slug %}" class="comment-form" method="post">
                 {% csrf_token %}
                 <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label>
                     {{ form.name }}</p>

@@ -15,9 +15,20 @@ class BlogAdminForm(forms.ModelForm):
 
 @admin.register(Blogs)
 class BlogsAdmin(admin.ModelAdmin):
-    list_display = ('id', "title", 'likes')
+    list_display = ("title", 'publish', 'id',)
     form = BlogAdminForm
-    readonly_fields = ('id', 'date_created',)
+    readonly_fields = ('id', 'date_created', 'author',)
+    list_filter = ['date_created', 'publish', 'author']
+    search_fields = ['title', 'content']
+    prepopulated_fields = {'slug': ('title',)}
+    raw_id_fields = ['author']
+    date_hierarchy = 'publish'
+    ordering = ['publish']
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.author = request.user
+        super().save_model(request, obj, form, change)
 
 
 @admin.register(Comment)
@@ -45,7 +56,7 @@ class ServicesAdmin(admin.ModelAdmin):
 
 
 @admin.register(Messages)
-class ServicesAdmin(admin.ModelAdmin):
+class MessagesAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'id',)
     readonly_fields = ('id',)
 

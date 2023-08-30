@@ -1,4 +1,4 @@
-from asgiref.sync import async_to_sync
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
 from django.db.models import Q, Count
 from django.http import HttpResponseRedirect, JsonResponse
@@ -63,24 +63,33 @@ class BlogsListView(ListView):
     # return context
 
 
-def BlogsDetailView(request, blog_id):
-    blog = get_object_or_404(Blogs, id=blog_id)
-    next_blog = Blogs.objects.filter(id=blog_id + 1)
-    previous_blog = Blogs.objects.filter(id=blog_id - 1)
+def BlogsDetailView(request, blog_slug):
+    blog = get_object_or_404(Blogs, slug=blog_slug)
+
+    try:
+        previous_blog = blog.get_previous_by_publish()
+    except ObjectDoesNotExist:
+        previous_blog = None
+
+    try:
+        next_blog = blog.get_next_by_publish()
+    except ObjectDoesNotExist:
+        next_blog = None
+
     comments = Comment.objects.filter(
         Q(blog=blog) & (Q(parent_comment__isnull=True))
     ).prefetch_related('child_comments')
 
     context = {
         'blog': blog,
-        'blog_id': blog_id,
+        'blog_slug': blog_slug,
         'comments': comments
     }
 
     if next_blog:
-        context['next_blog'] = next_blog[0]
+        context['next_blog'] = next_blog
     if previous_blog:
-        context['previous_blog'] = previous_blog[0]
+        context['previous_blog'] = previous_blog
 
     if request.method == 'POST':
         form = BlogsCommentForm(request.POST)
@@ -141,10 +150,6 @@ class CreateMessageView(CreateView):
         )
 
         return super().form_valid(form)
-
-
-
-
 
 # def SendMessageView(request):
 #     if request.method == 'POST':

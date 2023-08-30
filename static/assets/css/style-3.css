@@ -219,6 +219,8 @@ header.header.sticky {
     display: flex;
     flex-flow: row;
 }
+
+
 .menu-wrapper .quick-link ul.social-icon li{
     margin-right: 5px;
 }
@@ -1258,6 +1260,11 @@ header.header.sticky {
 .footer-section .footer-content .social-icon {
     display: flex;
     align-items: center;
+}
+@media (min-width: 768px) {
+    .footer-section .footer-content .social-icon {
+        display: none;
+    }
 }
 .footer-section .footer-content .social-icon li{
     margin-left: 5px;

@@ -30,6 +30,12 @@
     margin: 10px auto;
     position: absolute; /* To make sure the absolutely positioned elements are relative to this container */
 }
+
+@media (max-width: 767px) {
+    .main {
+        display: none;
+    }
+}
 /*.main {
   display: flex;
   flex-wrap: wrap;
