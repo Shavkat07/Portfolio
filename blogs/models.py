@@ -23,7 +23,7 @@ class Blogs(models.Model):
 class Comment(models.Model):
     parent_comment = models.ForeignKey('Comment', related_name="child_comments", verbose_name="Старший коммент",
                                        on_delete=models.CASCADE, blank=True, null=True)
-    blog = models.ForeignKey(Blogs, verbose_name="Статья", on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blogs, verbose_name="Статья", on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=255, verbose_name="User first name")
     email = models.EmailField(verbose_name="User Email")
     text = models.TextField(verbose_name="Comment Text")

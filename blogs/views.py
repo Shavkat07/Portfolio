@@ -76,9 +76,11 @@ def BlogsDetailView(request, blog_slug):
     except ObjectDoesNotExist:
         next_blog = None
 
-    comments = Comment.objects.filter(
-        Q(blog=blog) & (Q(parent_comment__isnull=True))
-    ).prefetch_related('child_comments')
+    comments = blog.comments.filter(parent_comment__isnull=True).prefetch_related('child_comments')
+
+    # comments = Comment.objects.filter(
+    #     Q(blog=blog) & (Q(parent_comment__isnull=True))
+    # ).prefetch_related('child_comments')
 
     context = {
         'blog': blog,
@@ -137,7 +139,7 @@ class CreateMessageView(CreateView):
         # Sending the email
         subject = 'Новое сообщение.'
         message = f'Привет\n\nУ вас новое сообщение от {self.object.name} ({self.object.email}).\n\nСообщение: \n{self.object.message}'
-        from_email = settings.EMAIL_HOST_USER  # Replace with your email
+        from_email = settings.EMAIL_HOST_USER
         recipient_list = ['storeserver065@gmail.com']  # Replace with the recipient's email address
 
         # Send the email
