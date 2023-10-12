@@ -27,7 +27,7 @@ class HomeView(ListView):
             queryset = queryset.filter(blogs_id=blogs_id).annotate(num_comments=Count('comment'))
             return queryset.filter(blogs_id=blogs_id)
         else:
-            queryset = queryset.annotate(num_comments=Count('comment'))
+            queryset = queryset.annotate(num_comments=Count('comments'))
             return queryset
 
     def get_context_data(self, **kwargs):
@@ -51,10 +51,10 @@ class BlogsListView(ListView):
         queryset = super(BlogsListView, self).get_queryset()
         blogs_id = self.kwargs.get('blog_id')
         if blogs_id:
-            queryset = queryset.filter(blogs_id=blogs_id).annotate(num_comments=Count('comment'))
+            queryset = queryset.filter(blogs_id=blogs_id).annotate(num_comments=Count('comments'))
             return queryset.filter(blogs_id=blogs_id)
         else:
-            queryset = queryset.annotate(num_comments=Count('comment'))
+            queryset = queryset.annotate(num_comments=Count('comments'))
             return queryset
 
     # def get_context_data(self, *, object_list=None, **kwargs):

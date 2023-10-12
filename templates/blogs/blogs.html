@@ -126,7 +126,7 @@
                 {% for blog in object_list %}
                 <div class="single-blog animate-me">
                     <div>
-                        <a href="{% url 'blogs:blog_detail' blog.id %}" class="featured-img">
+                        <a href="{% url 'blogs:blog_detail' blog.slug %}" class="featured-img">
                             <span class="date">{{ blog.date_created.day }} {{ blog.date_created|date:"M" }}<small>{{ blog.date_created.year }}</small></span>
                             {% if blog.image %}
                                 <img src="{{ blog.image.url }}" alt="featured img">
@@ -135,12 +135,12 @@
                             {% endif %}
                         </a>
                         <div class="post-title">
-                            <h3><a href="{% url 'blogs:blog_detail' blog.id %}">{{ blog.title }}</a></h3>
+                            <h3><a href="{% url 'blogs:blog_detail' blog.slug %}">{{ blog.title }}</a></h3>
                         </div>
                     </div>
                     <div class="like-comment">
 
-                        <a href="{% url 'blogs:blog_detail' blog.id %}" class="read-more">
+                        <a href="{% url 'blogs:blog_detail' blog.slug %}" class="read-more">
                             <img src="{% static 'assets/images/arrow-right-white.png' %}" alt="arrow">
                         </a>
 

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
 {% load static %}
+
 <html lang="en-US" class="no-js">
 
-
-<!-- Mirrored from demo.themecon.net/onlyme/html/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 10:01:51 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -34,273 +32,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/responsive-3.css' %}">
 
     <link rel="stylesheet" href="{% static 'assets/css/social_links.css' %}">
-    <style>
 
-        /*-----------portfolio section--------*/
-        .portfolio-section{
-            padding: 120px 0 191px;
-            background: url("images/project-bg1.jpg") no-repeat fixed center bottom / cover;
-            position: relative;
-            overflow: hidden;
-        }
-        .portfolio-section .overlay{
-            background: rgba(20, 21, 25, 0.85);
-        }
-        .portfolio-section .shape {
-            position: absolute;
-            bottom: 100px;
-            left: -120px;
-            opacity: 0.8;
-        }
-        .portfolio-section .section-title {
-            top: 30%;
-        }
-        .portfolio-section .portfolio-wrapper  {
-            z-index: 2;
-            position: relative;
-        }
-        .portfolio-section .single-portfolio{
-            display: flex;
-            flex-flow: row wrap;
-            align-items: flex-end;
-            margin-bottom: 80px;
-        }
-        .portfolio-section .single-portfolio:nth-child(even) {
-            flex-flow: row-reverse;
-        }
-        .portfolio-section .single-portfolio:last-child{
-            margin-bottom: 0;
-        }
-        .portfolio-section .single-portfolio .img-area{
-            background: #1e1f23;
-            width: 60%;
-            padding: 90px;
-            position: relative;
-        }
-        .portfolio-section .single-portfolio .img-area img {
-            box-shadow: 0 0 27px 0px rgba(0, 0, 0, 0.7);
-        }
-        .portfolio-section .single-portfolio .img-area .item-count{
-            display: block;
-            position: absolute;
-            right: -73px;
-            top: 20px;
-            font-size: 130px;
-            line-height: 0.9;
-            font-weight: 900;
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            -webkit-text-fill-color: transparent;
-            -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color: #333;
-        }
-        .portfolio-section .single-portfolio .img-area img,
-        .portfolio-section .single-portfolio .img-area .item-count{
-            transform: translateX(-70px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 1.2s ease;
-        }
-        .portfolio-section .single-portfolio .img-area .item-count{
-            transition-delay: 0.5s;
-        }
-        .portfolio-section .single-portfolio .img-area img.animated,
-        .portfolio-section .single-portfolio .img-area .item-count.animated{
-            transform: translateX(0);
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .portfolio-section .single-portfolio:nth-child(even) .img-area .item-count{
-            left: -73px;
-            right: inherit;
-        }
-        .portfolio-section .single-portfolio .portfolio-content{
-            width: 40%;
-            padding-left: 70px;
-            margin-bottom: 30px;
-        }
-        .portfolio-section .single-portfolio:nth-child(even) .portfolio-content {
-            padding-left: 0;
-            padding-right: 70px;
-        }
-        .portfolio-section .single-portfolio .img-area:before{
-            content: url("{% static 'assets/images/dot-texture-horizontal.png' %}");
-            position: absolute;
-            bottom: -83px;
-            left: 0px;
-            z-index: -1;
-        }
-        .portfolio-section .single-portfolio:nth-child(even) .img-area:before {
-            right: 0px;
-            left: inherit;
-
-        }
-
-        .portfolio-section .portfolio-content .portfolio-type{
-            font-size: 14px;
-            text-transform: uppercase;
-            color: #f43534;
-            font-weight: 700;
-            font-family: 'Futura Md BT';
-            letter-spacing: 1px;
-        }
-        .portfolio-section .portfolio-content h2{
-            color: #fffefe;
-            font-family: 'Futura Md BT';
-            font-weight: 500;
-            margin-bottom: 28px;
-        }
-        .portfolio-section .portfolio-content p{
-            color: #ababab;
-            font-size: 20px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        .portfolio-section .portfolio-content .portfolio-type,
-        .portfolio-section .portfolio-content h2,
-        .portfolio-section .portfolio-content p,
-        .portfolio-section .portfolio-content .link-default{
-            transform: translateY(30px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 1.2s ease;
-        }
-        .portfolio-section .portfolio-content .portfolio-type.animated,
-        .portfolio-section .portfolio-content h2.animated,
-        .portfolio-section .portfolio-content p.animated,
-        .portfolio-section .portfolio-content .link-default.animated{
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-        .portfolio-section .portfolio-content .portfolio-type.animated{
-            transition-delay: 0.5s;
-        }
-        .portfolio-section .portfolio-content h2.animated{
-            transition-delay: 0.7s;
-        }
-        .portfolio-section .portfolio-content p.animated{
-            transition-delay: 0.9s;
-        }
-        .portfolio-section .portfolio-content .link-default.animated{
-            transition-delay: 1s;
-        }
-
-        /*---------testimonial-section------------*/
-        .testimonial-section{
-            position: relative;
-            overflow: hidden;
-            padding: 0px 0;
-            background: url('{% static 'assets/images/testimonial-bg.jpg' %}') no-repeat center center / cover;
-        }
-        .testimonial-section .overlay{
-            background: rgba(20, 21, 25, 0.9);
-        }
-        .testimonial-section .shape {
-            position: absolute;
-            right: 0;
-            top: 120px;
-        }
-        .testimonial-section .testimonial-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 1050px;
-            width: 100%;
-            margin: 0 auto;
-            padding-bottom: 16px;
-        }
-        .testimonial-section .single-testimonial {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        .testimonial-section .single-testimonial .slick-slide {
-            position: relative;
-            padding-top: 140px;
-        }
-        .testimonial-section .single-testimonial img.quote {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            z-index: -1;
-        }
-        .testimonial-section .single-testimonial h2 {
-            font-style: italic;
-            color: #fff;
-        }
-        .testimonial-section .single-testimonial .author a {
-            font-size: 22px;
-            font-weight: 700;
-            color: #f43534;
-            text-transform: capitalize;
-            font-family: 'Roboto', sans-serif;
-            display: block;
-            margin-top: 26px;
-        }
-        .testimonial-section .single-testimonial .author .desgination {
-            display: block;
-            font-size: 14px;
-            text-transform: none;
-            color: #f43534;
-        }
-        .testimonial-section .slick-dots{
-            margin-top: 10px;
-        }
-        .testimonial-section .slick-dots li{
-            display: inline-block;
-            margin: 0 5px;
-        }
-        .testimonial-section .slick-dots li button {
-            border: none;
-            font-size: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            background: #333;
-            transition: all 0.5s ease;
-            cursor: pointer;
-            padding: 0;
-        }
-        .testimonial-section .slick-dots li.slick-active button {
-            background: #acacac;
-        }
-
-        /*----author image area-------*/
-        .testimonial-section .author-img-wrapper {
-            margin: 20px 0 0 300px;
-            position: relative;
-            max-width: 210px;
-        }
-
-        .testimonial-section .author-img-wrapper:before{
-            content: url('{% static 'assets/images/curve.png' %}');
-            position: absolute;
-            bottom: 150px;
-            left: 126px;
-            overflow: hidden;
-            width: 0;
-            transition: all 1.5s ease 0.3s;
-        }
-        .testimonial-section .author-img-wrapper.animated:before{
-            width: 1100px;
-        }
-        .testimonial-section .author-img-wrapper .author-img {
-            border-radius: 100%;
-            height: 160px;
-            width: 160px;
-            border: 2px dashed #696a69;
-            padding: 10px;
-        }
-        .testimonial-section .author-img-wrapper:focus{
-            box-shadow: none;
-            border: none;
-        }
-
-
-    </style>
 </head>
 
 <body>
@@ -395,8 +127,7 @@
 <span class="vertical-line line4"></span>
 <span class="vertical-line line5"></span>
 
-<section class="hero-section pos-relative"
-         style="background: #16171b url('{% static 'assets/images/hero-bg.jpg' %}') no-repeat;">
+<section class="hero-section pos-relative">
     <div class="overlay"></div>
     <figure class="animate-bg-wrapper">
         <img src="{% static 'assets/images/hero-bg-img1.jpg' %}" alt="image" class="bg-img1">
@@ -410,8 +141,7 @@
 
     <span class="vertical-logo"><img src="{% static 'assets/images/vertical-logo.png' %}" alt="vertical-logo"></span>
     <div class="hero-image-wrapper">
-        <span class="hero-image animate-me"
-              style="background: url('{% static 'assets/images/hero-img-bg.jpg' %}') no-repeat center right/cover;"></span>
+        <span class="hero-image animate-me"></span>
         <img src="{% static 'assets/images/dot-texture.png' %}" alt="texture" class="dot-texture animate-me">
     </div>
     <span class="scroll-down animate-me" id="scroll-me">scroll down <img
@@ -467,8 +197,7 @@
     <div class="container">
         <div class="content-wrapper">
             <div class="hero-content">
-                <h1 class="animate-me"
-                    style="background: url('{% static 'assets/images/hero-title-pettern-bg.png' %}') no-repeat 95% center / contain;">
+                <h1 class="animate-me">
                     I’m Shavkat</h1>
                 <h2 class="animate-me">Python Back-end Developer</h2>
                 <a href="#" class="hire-me link-default animate-me">Hire Me
@@ -487,8 +216,7 @@
 <!-- =======================================
     ==Start about section==
 =======================================-->
-<section class="about-section pos-relative" id="about-me"
-         style="    background: url('{% static 'assets/images/about-bg.jpg' %}') no-repeat center top/ cover;">
+<section class="about-section pos-relative" id="about-me">
     <div class="overlay"></div>
     <div class="about-shape">
         <img src="{% static 'assets/images/about-shape.png' %}" alt="shape" class="shape">
@@ -496,8 +224,7 @@
     </div>
     <div class="container">
         <img src="{% static 'assets/images/dot-texture.png' %}" alt="pattern img" class="dot-pattern">
-        <span class="about-img1 animate-me"
-              style="background: url('{% static 'assets/images/about-img1.jpg' %}') no-repeat top left/cover;"></span>
+        <span class="about-img1 animate-me" ></span>
         <div class="about-content">
             <h2 class="animate-me">
                 Meet the team at my website building agency MRIT. I am currently working at MRIT as a Backend developer.
@@ -507,8 +234,7 @@
                 complexity. Passionate about writing clean and maintainable code and continuously learning to enhance
                 skills and knowledge."</h5>
         </div>
-        <span class="about-img2 animate-me"
-              style="background: url('{% static 'assets/images/about-img2.jpg' %}') no-repeat left top / cover;"></span>
+        <span class="about-img2 animate-me"></span>
     </div>
 </section>
 <!-- =======================================
@@ -520,7 +246,7 @@
     ==Start Portfolio section==
 =======================================-->
 <section class="portfolio-section" id="portfolio"
-         style="background: url('{% static 'assets/images/project-bg1.jpg' %}') no-repeat center center / cover;">
+         style="">
     <h2 class="section-title" data-enllax-ratio="-0.5" data-enllax-type="foreground">porojects</h2>
     <div class="overlay"></div>
     <img src="{% static 'assets/images/portfolio-shape.png' %}" alt="shape" class="shape" data-enllax-ratio="0.5"
@@ -583,8 +309,7 @@
 <!-- =======================================
     ==Start Service section==
 =======================================-->
-<section class="section service-section pos-relative"
-         style="background: url('{% static 'assets/images/service-bg.jpg' %}') no-repeat left center/cover;">
+<section class="section service-section pos-relative">
     <h2 class="section-title" data-enllax-ratio="-0.7" data-enllax-type="foreground">Services</h2>
     <div class="container">
         <div class="service-wrapper" id="home2-service">
@@ -649,8 +374,7 @@
 <!-- =======================================
     ==Start Blog section==
 =======================================-->
-<section class="blog-section" id="blog"
-         style="background: #141519 url('{% static 'assets/images/project-bg.jpg' %}') no-repeat center center/cover;">
+<section class="blog-section" id="blog">
     <img src="{% static 'assets/images/blog-ellipse.png' %}" alt="" class="ellipse">
     <div class="container">
         <h2 class="section-title" data-enllax-ratio="0.5" data-enllax-type="foreground"
@@ -740,8 +464,7 @@
 <!-- =======================================
     ==Start Contact section==
 =======================================-->
-<section class="footer-area" id="contact"
-         style="background: #141519 url('{% static 'assets/images/service-bg.jpg' %}') no-repeat center center / cover;">
+<section class="footer-area" id="contact">
     <div class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -958,23 +681,39 @@
                 <ul class="social-icon">
                     <li class="telegram">
                         <a href="https://t.me/shava_oo7" title="Telegram" target="_blank">
-                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"> <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z" fill="white"></path> </svg>
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z"
+                                      fill="white"></path>
+                            </svg>
                         </a>
                     </li>
                     <li class="vk">
                         <a href="https://vk.com/shava0_0_7" title="Facebook" target="_blank">
-                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>VKontakte</title><path d="M484.7,132c3.56-11.28,0-19.48-15.75-19.48H416.58c-13.21,0-19.31,7.18-22.87,14.86,0,0-26.94,65.6-64.56,108.13-12.2,12.3-17.79,16.4-24.4,16.4-3.56,0-8.14-4.1-8.14-15.37V131.47c0-13.32-4.06-19.47-15.25-19.47H199c-8.14,0-13.22,6.15-13.22,12.3,0,12.81,18.81,15.89,20.84,51.76V254c0,16.91-3,20-9.66,20-17.79,0-61-66.11-86.92-141.44C105,117.64,99.88,112,86.66,112H33.79C18.54,112,16,119.17,16,126.86c0,13.84,17.79,83.53,82.86,175.77,43.21,63,104.72,96.86,160.13,96.86,33.56,0,37.62-7.69,37.62-20.5V331.33c0-15.37,3.05-17.93,13.73-17.93,7.62,0,21.35,4.09,52.36,34.33C398.28,383.6,404.38,400,424.21,400h52.36c15.25,0,22.37-7.69,18.3-22.55-4.57-14.86-21.86-36.38-44.23-62-12.2-14.34-30.5-30.23-36.09-37.92-7.62-10.25-5.59-14.35,0-23.57-.51,0,63.55-91.22,70.15-122" style="fill-rule:evenodd" fill="white"></path></svg>
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+                                 viewBox="0 0 512 512"><title>VKontakte</title>
+                                <path d="M484.7,132c3.56-11.28,0-19.48-15.75-19.48H416.58c-13.21,0-19.31,7.18-22.87,14.86,0,0-26.94,65.6-64.56,108.13-12.2,12.3-17.79,16.4-24.4,16.4-3.56,0-8.14-4.1-8.14-15.37V131.47c0-13.32-4.06-19.47-15.25-19.47H199c-8.14,0-13.22,6.15-13.22,12.3,0,12.81,18.81,15.89,20.84,51.76V254c0,16.91-3,20-9.66,20-17.79,0-61-66.11-86.92-141.44C105,117.64,99.88,112,86.66,112H33.79C18.54,112,16,119.17,16,126.86c0,13.84,17.79,83.53,82.86,175.77,43.21,63,104.72,96.86,160.13,96.86,33.56,0,37.62-7.69,37.62-20.5V331.33c0-15.37,3.05-17.93,13.73-17.93,7.62,0,21.35,4.09,52.36,34.33C398.28,383.6,404.38,400,424.21,400h52.36c15.25,0,22.37-7.69,18.3-22.55-4.57-14.86-21.86-36.38-44.23-62-12.2-14.34-30.5-30.23-36.09-37.92-7.62-10.25-5.59-14.35,0-23.57-.51,0,63.55-91.22,70.15-122"
+                                      style="fill-rule:evenodd" fill="white"></path>
+                            </svg>
                         </a>
                     </li>
 
                     <li class="discord">
                         <a href="https://discord.gg/jxpV5dvtFd" title="Discord" target="_blank">
-                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16"> <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" fill="white"></path> </svg>
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                 class="bi bi-discord" viewBox="0 0 16 16">
+                                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"
+                                      fill="white"></path>
+                            </svg>
                         </a>
                     </li>
                     <li class="github">
                         <a href="https://github.com/Shavkat07" title="Github" target="_blank">
-                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><title>ionicons-v5_logos</title><path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" fill="white"></path></svg>                        </a>
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>
+                                ionicons-v5_logos</title>
+                                <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                                      fill="white"></path>
+                            </svg>
+                        </a>
                     </li>
                     <li class="twitter">
                         <a href="https://twitter.com/Shava_0_0_7" title="Twitter" target="_blank">

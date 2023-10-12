@@ -25,7 +25,7 @@
         max-width: 1080px;
     }
     .hero-section .hero-image {
-        max-width: 400px;
+        max-width: 500px;
     }
     .hero-section .vertical-logo {
         width: 230px;
@@ -660,7 +660,7 @@
     .portfolio-section .single-portfolio .portfolio-content {
         max-width: 100%;
     }
-    
+
     
     .testimonial-section .single-testimonial h2 {
         font-size: 24px;
