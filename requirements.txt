@@ -3,7 +3,7 @@ Django==4.2.3
 django-ckeditor==6.7.0
 django-jazzmin==2.6.0
 django-js-asset==2.1.0
-Pillow==10.0.0
+Pillow==10.0.1
 psycopg2-binary==2.9.7
 python-decouple==3.8
 sqlparse==0.4.4
