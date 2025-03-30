@@ -1,0 +1,40 @@
+version: "3"
+services:
+  portfolio:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/Portfolio
+    command: >
+      sh -c "python manage.py makemigrations && python manage.py migrate &&
+                   python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - database
+
+
+  database:
+    image: postgres:15.0-alpine
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=portfolio
+      - POSTGRES_USER=shavkat
+      - POSTGRES_PASSWORD=kurbanov
+
+
+#version: '3'
+
+#services:
+#  portfolio:
+#    build: .
+#    container_name: portfolio
+##    env_file:
+##      - .env.dev
+#    command: bash -c "python3 manage.py migrate --run-syncdb && python3 manage.py initadmin && python3 manage.py runserver 0.0.0.0:8000"
+#    volumes:
+#      - .:/root/onlinetest/
+#      - .:/var/www/ONLINE_test/
+#    ports:
+#      - "8888:8000"
